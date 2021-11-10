@@ -1,0 +1,79 @@
+.roaster {
+    height: 20%;
+    background: gold;
+    margin-top: 5%;
+    
+    h2{
+        color: #FFF;
+        margin-left: 10%;
+    }
+    h4 {
+        color: #FFF;
+        margin-left: 10%;
+
+    }
+}
+
+.container-heading {
+    padding: 20px;
+}
+
+::ng-deep .mat-form-field-flex {
+    background: aliceblue !important;
+}
+
+.clear-filter {
+    height: 50px;
+    background: white;
+    color: rgb(82, 86, 89);
+    margin-left: 12rem;
+}
+
+.w-100 {
+    width: 100%!important;
+  }
+  
+  .select-row {
+    margin-left: 10%;
+
+  }
+  .containercarosal {
+    display: flex;
+    position: relative;
+    justify-content: center;
+  }
+  
+  .cards {
+    width: calc(100% - 80px);
+    overflow: hidden;
+    margin-left: 10%;
+  }
+  
+ 
+  
+  .card-single {
+    // height: 250px;
+    background-color: #e0e1e2;
+    border-radius: 5px;
+    display: inline-block;
+    // margin-right: 10px;
+    width: 250px;
+    margin: 10px;
+    position: relative;
+  }
+  
+  .no-right-margin {
+    margin-right: 0px;
+  }
+  
+  .card-single span {
+    font-size:48px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .no-data {
+    color: white;
+  }

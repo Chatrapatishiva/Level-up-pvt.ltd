@@ -1,0 +1,93 @@
+<mat-grid-list cols="1" rowHeight="10rem" class="mt-5">
+    <mat-grid-tile>
+        <div class="container container-first">
+            <div class="ml-5">YOUR TEAM</div>
+            <p></p>
+            <div class="ml-5">
+                <ul>
+                    <li>To create a team, user must have ateast 11 players</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis quidem, ea omnis saepe veniam
+                        id excepturi vitae odit? Earum placeat eaque libero odit quaerat quisquam velit illo sit,
+                        ducimus numquam.</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+<div class="container">
+    <div class="containercarosal" #container>
+        <div class="left" *ngIf="totalPages > 1" (click)="currentPage != 1 && changePage(-1)"
+            [ngClass]="{'disabled':currentPage === 1}">
+            <mat-icon>skip_previous</mat-icon>
+        </div>
+        <div class="cards" [ngClass]="{'w-100': totalPages === 1}">
+            <div class="overflow" [ngStyle]="{'width': overflowWidth, 'left': pagePosition}">
+                <div class="card-single card" *ngFor="let i of selectedPlayers; let index = index"
+                    [ngStyle]="{'width': cardWidth}">
+                    <img class="card-img-top" height="150" *ngIf="!i.selected" src="../../assets/images/Placeholder.png"
+                        alt="Card image cap">
+                    <img class="card-img-top" *ngIf="i.selected" height="150" src="{{i.avtar}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title">{{i.name}}</h3>
+                        <p class="card-text" *ngIf="i.about != ''">{{i.about}} </p>
+                        <p class="card-text" *ngIf="i.about == ''">&nbsp;</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right" *ngIf="totalPages > 1" (click)="currentPage != totalPages && changePage(+1)"
+            [ngClass]="{'disabled':currentPage === totalPages}">
+            <mat-icon>skip_next</mat-icon>
+        </div>
+    </div>
+</div>
+<div>
+    <p></p>
+</div>
+<div class="container">
+    <div class="ml-5 players">
+        <h2>PLAYERS</h2>
+        <h4>Form a team with these cricketer's now:</h4>
+    </div>
+    <div class="containercarosal" #container1>
+        <div class="left" *ngIf="totalPages1 > 1" (click)="currentPage1 != 1 && changePage1(-1)"
+            [ngClass]="{'disabled':currentPage1 === 1}">
+            <mat-icon>skip_previous</mat-icon>
+        </div>
+        <div class="cards" [ngClass]="{'w-100': totalPages1 === 1}">
+            <div class="overflow" [ngStyle]="{'width': overflowWidth1, 'left': pagePosition1}">
+                <div class="card-single card" *ngFor="let i of TotalPlayers; let index = index"
+                    [ngStyle]="{'width': cardWidth1}">
+
+                    <mat-checkbox (change)="updateTeam($event)" class="checkbox m-1" [(ngModel)]="i.selected"
+                        [(indeterminate)]="indeterminate" [labelPosition]="labelPosition">
+
+                    </mat-checkbox>
+                    <img src="../../assets/images/bat.png" class="type-icon" *ngIf="i.type == 'Batsman'" alt="Avatar" style="width:45px; background: #bdcfbe;">
+                    <img src="../../assets/images/ball.png" class="type-icon" *ngIf="i.type == 'Bowler'" alt="Avatar" style="width:45px; background: #bdcfbe;">
+                    <img src="../../assets/images/allrounder.png" class="type-icon" *ngIf="i.type == 'Allrounder'" alt="Avatar" style="width:45px; background: #bdcfbe;">
+
+                    <img class="card-img-top" height="150" src="{{i.avtar}}" alt="Card image cap">
+
+                    <div class="card-body">
+                        <h3 class="card-title">{{i.name}}</h3>
+                        <p class="card-text">{{i.about}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right" *ngIf="totalPages1 > 1" (click)="currentPage1 != totalPages1 && changePage1(+1)"
+            [ngClass]="{'disabled':currentPage1 === totalPages1}">
+            <mat-icon>skip_next</mat-icon>
+        </div>
+    </div>
+</div>
+
+<div>
+    <p>&nbsp;</p>
+</div>
