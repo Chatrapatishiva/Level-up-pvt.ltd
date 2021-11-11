@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  URL: 'http://localhost:3000',
-  production: false
+  URL: ' https://pure-springs-20758.herokuapp.com',
+  production: true
 };
 
 /*
